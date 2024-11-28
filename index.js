@@ -1,5 +1,5 @@
 import express from 'express';
-import { buscarUfs, buscarUfPorId, buscarUfsPorNome } from './servicos/servico.js';
+import { buscarUfs, buscarUfporId , buscarUfsPorNome } from './servico/servico.js';
 
 const app = express();
 
@@ -14,7 +14,7 @@ app.get('/ufs', (req, res) => {
 });
 
 app.get('/ufs/:iduf', (req, res) => {
-  const uf = buscarUfPorId(req.params.iduf);
+  const uf = buscarUfporId(req.params.iduf);
 
   if (uf) {
     res.json(uf);
